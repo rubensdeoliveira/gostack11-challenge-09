@@ -1,32 +1,32 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback } from 'react'
 
-import { FiCheckSquare } from 'react-icons/fi';
-import { FormHandles } from '@unform/core';
-import { Form } from './styles';
-import Modal from '../Modal';
-import Input from '../Input';
+import { FiCheckSquare } from 'react-icons/fi'
+import { FormHandles } from '@unform/core'
+import { Form } from './styles'
+import Modal from '../Modal'
+import Input from '../Input'
 
 interface IFoodPlate {
-  id: number;
-  name: string;
-  image: string;
-  price: string;
-  description: string;
-  available: boolean;
+  id: number
+  name: string
+  image: string
+  price: string
+  description: string
+  available: boolean
 }
 
 interface IModalProps {
-  isOpen: boolean;
-  setIsOpen: () => void;
-  handleUpdateFood: (food: Omit<IFoodPlate, 'id' | 'available'>) => void;
-  editingFood: IFoodPlate;
+  isOpen: boolean
+  setIsOpen: () => void
+  handleUpdateFood: (food: Omit<IFoodPlate, 'id' | 'available'>) => void
+  editingFood: IFoodPlate
 }
 
 interface IEditFoodData {
-  name: string;
-  image: string;
-  price: string;
-  description: string;
+  name: string
+  image: string
+  price: string
+  description: string
 }
 
 const ModalEditFood: React.FC<IModalProps> = ({
@@ -35,14 +35,14 @@ const ModalEditFood: React.FC<IModalProps> = ({
   editingFood,
   handleUpdateFood,
 }) => {
-  const formRef = useRef<FormHandles>(null);
+  const formRef = useRef<FormHandles>(null)
 
   const handleSubmit = useCallback(
     async (data: IEditFoodData) => {
       // EDIT A FOOD PLATE AND CLOSE THE MODAL
     },
     [handleUpdateFood, setIsOpen],
-  );
+  )
 
   return (
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -63,7 +63,7 @@ const ModalEditFood: React.FC<IModalProps> = ({
         </button>
       </Form>
     </Modal>
-  );
-};
+  )
+}
 
-export default ModalEditFood;
+export default ModalEditFood
